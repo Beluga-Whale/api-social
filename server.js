@@ -4,12 +4,13 @@ import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import cors from 'cors'
 import connectDB from './database/db.js'
+import mongoose from 'mongoose'
 
 
 dotenv.config()
 const PORT = process.env.PORT || 7000
 const app = express()
-
+mongoose.set('strictQuery', true)
 connectDB()
 
 app.use(cors())
